@@ -4,10 +4,12 @@
 
 Kubernetes (K8s), is an open source system for automating deployment, scaling, and management of containerized applications.
 
+### Understanding in a better way:
+
 Suppose you run a api service using docker
 
 ```bash
-docker run -p 8080:8080 --name api-service-container my-api
+docker run --name api-service-container -p 8080:8080  my-api
 ```
 
 Docker start one container
@@ -21,7 +23,7 @@ API Container 3
 API Container 4
 ```
 
-For that you could menually start four containers
+For that you could menually start four containers and distribute traffic around these containers using Load Balancer
 
 But then you have problems
 
@@ -95,4 +97,76 @@ API-4
        │                      Pod
        │                       │
        │                    Container
+```
+
+### The most common words you heard when you learning about k8s
+
+## cluster:
+
+### The entire kubernetes environment called kubernetes cluster.
+
+## Node:
+
+### A machine inside the cluster.
+
+```bash
+Cluster
+   │
+   ├── Node 1
+   ├── Node 2
+   └── Node 3
+```
+
+## Pod:
+
+### The smallest deployable unit in k8s.
+
+```bash
+Pod
+ │
+ └── Container
+```
+
+For example:
+
+```bash
+Pod
+ │
+ └── Nodejs API container
+```
+
+### A Pod can technically contain multiple containers:
+
+```bash
+Pod
+ ├── Application container
+ └── Sidecar container
+```
+
+### You can think like:
+
+- Pod ≈ wrapper around a container.
+
+## Deployment:
+
+### A deployment manages pods.
+
+```bash
+Deployment
+    │
+    ├── Pod
+    ├── Pod
+    └── Pod
+```
+
+## Service:
+
+### A stable network endpoint that routes traffic to dynamic Pods.
+
+```bash
+              Service
+                 │
+        ┌────────┼────────┐
+        │        │        │
+      Pod 1    Pod 2    Pod 3
 ```
