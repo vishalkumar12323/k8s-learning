@@ -140,7 +140,7 @@ Pod
 ```bash
 Pod
  ├── Application container
- └── Sidecar container
+ └── Database container
 ```
 
 ### You can think like:
@@ -154,9 +154,9 @@ Pod
 ```bash
 Deployment
     │
-    ├── Pod
-    ├── Pod
-    └── Pod
+    ├── Pod 1
+    ├── Pod 2
+    └── Pod 3
 ```
 
 ## Service:
