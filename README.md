@@ -12,7 +12,7 @@ This repository contains beginner-friendly Kubernetes examples and notes for und
 
 The examples cover the following Kubernetes concepts:
 
-- Containers and Pods
+- Pods and Containers
 - Deployments and desired state
 - Services and network exposure
 - Kubernetes control plane and worker nodes
