@@ -129,12 +129,12 @@ kubectl get services
 
 ## Quick Reference
 
-| Resource | Purpose |
-| --- | --- |
-| `Deployment` | Maintains the desired number of running Pods |
-| `Pod` | Runs one or more containers as the smallest deployable unit |
-| `Service` | Provides a stable network endpoint for Pods |
-| `ClusterIP` | Exposes a Service only inside the Kubernetes cluster |
+| Resource     | Purpose                                                     |
+| ------------ | ----------------------------------------------------------- |
+| `Deployment` | Maintains the desired number of running Pods                |
+| `Pod`        | Runs one or more containers as the smallest deployable unit |
+| `Service`    | Provides a stable network endpoint for Pods                 |
+| `ClusterIP`  | Exposes a Service only inside the Kubernetes cluster        |
 
 ## Notes
 
