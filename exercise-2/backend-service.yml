@@ -5,7 +5,7 @@ metadata:
   namespace: selector-demo
 spec:
   selector:
-    app: backend-service
+    app: backend
 
   ports:
     - name: backend-service
