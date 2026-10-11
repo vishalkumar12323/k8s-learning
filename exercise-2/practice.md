@@ -45,3 +45,8 @@ kubectl get service backend-service -n selector-demo
 ```bash
 kubectl get endpointslice -n selector-demo -l kubernetes.io/service-name=backend-service
 ```
+
+### Access nginx service on our browser
+```bash
+kubectl port-forward -n selector-demo service/backend-service 3000:80
+```
