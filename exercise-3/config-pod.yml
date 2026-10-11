@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: config-demo-pod
+  namespace: config-demo
+
+spec:
+  containers:
+    - name: demo
+      image: busybox:1.36
+
+      command: ["/bin/sh", "-c", "sleep 3600"]
+
+      envFrom:
+        - configMapRef:
+            name: app-config
