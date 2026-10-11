@@ -9,3 +9,4 @@ data:
   NODE_ENV: 'production'
   APP_NAME: 'KubernetesDemo'
   LOG_LEVEL: 'info'
+  API_BASE_URL: 'http://localhost:30001/api/v1'
