@@ -27,3 +27,21 @@ Using multiple selectors:
 ```bash
 kubectl get pods -n selector-demo -l "app=backend,environment=production"
 ```
+
+
+## Apply the backend-service.yml
+```bash
+kubectl apply -f backend-service.yml
+```
+
+### Inspect the service
+```bash
+kubectl get service -n selector-demo
+# or
+kubectl get service backend-service -n selector-demo
+```
+
+### Check endpoints
+```bash
+kubectl get endpointslice -n selector-demo -l kubernetes.io/service-name=backend-service
+```
