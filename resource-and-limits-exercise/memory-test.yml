@@ -1,0 +1,25 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: memory-test
+  namespace: config-demo
+spec:
+  restartPolicy: Never
+  containers:
+    - name: memory-hog
+      image: python:3.12-alpine
+      command:
+        - python
+        - -c
+        - |
+          data = []
+          while True:
+              data.append(bytearray(1024 * 1024))
+      resources:
+        requests:
+          memory: "16Mi"
+          cpu: "100m"
+        limits:
+          memory: "32Mi"
+          cpu: "200m"
