@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: memory-pending
+  namespace: config-demo
+
+spec:
+  containers:
+    - name: nginx
+      image: nginx:stable
+
+      resources:
+        requests:
+          memory: "100Gi"
+          cpu: "100m"
