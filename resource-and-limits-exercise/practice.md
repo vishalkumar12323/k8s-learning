@@ -25,3 +25,10 @@ or
 kubectl get deployment nginx-resources -n config-demo -o yaml
 ```
 
+### Here's what each value means.
+| configration    |   meaning |
+|   ---     |   ---     |
+|   cpu: "250m" request  |	0.25 CPU core
+|   cpu: "500m" limit   |	0.5 CPU core
+|   memory: "128Mi" request |	128 mebibytes of memory requested for scheduling
+|   memory: "256Mi" limit   |	256 mebibytes of memory allowed
