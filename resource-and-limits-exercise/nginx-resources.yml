@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: nginx-resources
+  namespace: config-demo 
+
+
+spec:
+  replicas: 1
+  selectors:
+    matchLabels:
+      app: nginx-resources
+  
+  template:
+    metadata:
+      labels:
+        app: nginx-resources
+      
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:stable
+          ports:
+            - containerPort: 80
