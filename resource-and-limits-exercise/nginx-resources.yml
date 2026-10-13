@@ -1,34 +1,28 @@
+
 apiVersion: apps/v1
 kind: Deployment
-
 metadata:
   name: nginx-resources
-  namespace: config-demo 
-
-
+  namespace: config-demo
 spec:
   replicas: 1
-  selectors:
+  selector:
     matchLabels:
       app: nginx-resources
-  
   template:
     metadata:
       labels:
         app: nginx-resources
-      
     spec:
       containers:
         - name: nginx
           image: nginx:stable
           ports:
             - containerPort: 80
-          
           resources:
             requests:
               cpu: "100m"
-              memory: "64MI"
-            
+              memory: "64Mi"
             limits:
               cpu: "200m"
-              memory: "128MI"
+              memory: "128Mi"
