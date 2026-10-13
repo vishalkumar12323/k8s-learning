@@ -137,8 +137,5 @@ kubectl get services
 | `ClusterIP`  | Exposes a Service only inside the Kubernetes cluster        |
 
 ## Notes
-
-- The example uses `nginx:latest`. Pinning an image version is recommended for production workloads.
 - The Deployment and Service use matching labels so the Service can select the Pods.
-- The repository is intended for learning; the manifests are not production-ready configurations.
 - Review `menual.md` for conceptual explanations before applying the manifests.
