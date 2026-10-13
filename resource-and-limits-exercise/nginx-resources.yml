@@ -23,3 +23,12 @@ spec:
           image: nginx:stable
           ports:
             - containerPort: 80
+          
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64MI"
+            
+            limits:
+              cpu: "200m"
+              memory: "128MI"
