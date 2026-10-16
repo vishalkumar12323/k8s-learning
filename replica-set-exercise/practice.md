@@ -40,7 +40,7 @@ kubectl rollout status deployment/nginx-deployment \
 kubectl get deployment,pods -n replicas-demo
 ```
 
-## Experiment 1
+##  Experiment 1
 ### Delete the one Pod
 ```bash
 kubectl get pods -n replicas-demo
@@ -48,4 +48,20 @@ kubectl get pods -n replicas-demo
 kubectl delete pod <pod-name> -n replicas-demo
                             ⬇️
 kubectl get pods -n replicas-demo
+```
+
+##  Experiment 2
+### Scale from 3 to 5 replicas
+Scale the deployment direct
+```bash
+kubectl scale deployment nginx-deployment \
+    --replicas=5 \
+    -n replicas-demo
+```
+
+###  Wait for readiness and verify
+```bash
+kubectl rollout status deployment/nginx-deployment -n replicas-demo
+                                            ⬇️
+kubectl get deployment,pods -n replicas-demo
 ```
