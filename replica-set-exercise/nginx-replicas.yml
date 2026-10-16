@@ -1,12 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: nginx-deployment
-  namesapce: replicas-demo
+  namespace: replicas-demo
+
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      app: nginx-replicas
+      app: nginx
   template:
     metadata:
       labels:
@@ -21,6 +24,5 @@ spec:
             cpu: "100m"
           limits:
             memory: "128Mi"
-            cpu: "150m"
         ports:
         - containerPort: 80

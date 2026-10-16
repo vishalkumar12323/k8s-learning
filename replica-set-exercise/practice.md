@@ -13,3 +13,39 @@ Instead, we can run three replicas of the same application.
 
 ## Hands on: Running three Nginx replicas.
 
+### Create a namespace
+```bash
+kubectl create ns replicas-lab
+```
+Verify
+```bash
+kubectl get namespace
+# or
+kubectl get ns
+```
+
+### Apply the nginx-replicas.yml configration
+```bash
+kubectl apply -f nginx-replicas.yml
+```
+
+### Wait for the deployment to become ready
+```bash
+kubectl rollout status deployment/nginx-deployment \
+  -n replicas-demo
+```
+
+### Inspect the Deployment, and Pod replicas
+```bash
+kubectl get deployment,pods -n replicas-demo
+```
+
+## Experiment 1
+### Delete the one Pod
+```bash
+kubectl get pods -n replicas-demo
+                            ⬇️
+kubectl delete pod <pod-name> -n replicas-demo
+                            ⬇️
+kubectl get pods -n replicas-demo
+```
