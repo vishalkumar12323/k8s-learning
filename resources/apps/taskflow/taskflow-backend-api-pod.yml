@@ -28,5 +28,16 @@ spec:
         value: "3001"
       - name: NODE_ENV
         value: "production"
+
+  - name: taskflow-database
+    image: ""
+    resources:
+      requests:
+        memory: "250Mi"
+        cpu: "200m"
+      limits:
+        memory: "500Mi"
+    ports: 
+      - containerPort: 5432
     
 
