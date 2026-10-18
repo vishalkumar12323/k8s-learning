@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: taskflow-backend
-  namespace: taskflow-app
+  namespace: taskflow
   labels:
     app.kubernetes.io/name: taskflow-backend
 spec:
@@ -29,15 +29,15 @@ spec:
       - name: NODE_ENV
         value: "production"
 
-  - name: taskflow-database
-    image: postgres:16-alpine
-    resources:
-      requests:
-        memory: "250Mi"
-        cpu: "200m"
-      limits:
-        memory: "500Mi"
-    ports: 
-      - containerPort: 5432
+  # - name: taskflow-database
+  #   image: postgres:16-alpine
+  #   resources:
+  #     requests:
+  #       memory: "250Mi"
+  #       cpu: "200m"
+  #     limits:
+  #       memory: "500Mi"
+  #   ports: 
+  #     - containerPort: 5432
     
 
