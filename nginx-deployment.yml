@@ -1,24 +1,33 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment 
 
 metadata:
-  name: nginx
+  name: nginx-deployment
+  namespace: default
 
 spec:
   replicas: 3
-
   selector:
     matchLabels:
-      app: nginx
-
+      app.kubernetes.io/name: nginx-pod
+      app.kubernetes.io/component: webserver
+      app.kubernetes.io/instance: nginx-pod
+  
   template:
     metadata:
       labels:
-        app: nginx
-
+        app.kubernetes.io/name: nginx-pod
+        app.kubernetes.io/component: webserver
+        app.kubernetes.io/instance: nginx-pod
     spec:
       containers:
-        - name: nginx
-          image: nginx:latest
+        - name: nginx-webserver
+          image: nginx:stable
+          resources:
+            requests:
+              memory: "50Mi"
+              cpu: "100m"
+            limits:
+              memory: "50Mi"
           ports:
             - containerPort: 80
