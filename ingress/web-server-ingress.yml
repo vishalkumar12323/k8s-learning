@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-server-ingress
+  namespace: service-discovery-demo
+  labels:
+    app.kubernetes.io/name: web-server-ingress
+spec:
+  rules:
+  - host: webserver.local
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: web-service
+            port: 
+              number: 80
