@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-server
+  name: backend
   namespace: service-discovery-demo
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: web-server
+      app: backend
   template:
     metadata:
       labels:
-        app: web-server
+        app: backend
     spec:
       containers:
-      - name: web-server
+      - name: nginx
         image: nginx:stable
         resources:
           requests:

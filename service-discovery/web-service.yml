@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-service
+  name: backend-service
   namespace: service-discovery-demo
 spec:
   type: ClusterIP
   selector:
-    app: web-server
+    app: backend
   ports:
   - port: 80
     targetPort: 80
